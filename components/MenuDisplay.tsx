@@ -1,6 +1,6 @@
 import React from 'react';
 import { MenuCategory, MenuItem } from '../types';
-import { Flame, Star, UtensilsCrossed } from 'lucide-react';
+import { Flame, Star, UtensilsCrossed, Clock } from 'lucide-react';
 import { APP_NAME } from '../constants';
 
 interface MenuDisplayProps {
@@ -37,6 +37,11 @@ const MenuItemRow: React.FC<{ item: MenuItem; index: number; isHighlighted: bool
             {item.isSpicy && (
               <span className="flex items-center font-bold text-red-500 bg-red-500/10 px-[0.8vh] py-[0.2vh] rounded-full border border-red-500/20 text-[1.5vh]">
                 <Flame className="w-[1.5vh] h-[1.5vh] mr-[0.5vh] fill-red-500" /> SPICY
+              </span>
+            )}
+            {item.isComingSoon && (
+              <span className="flex items-center font-bold text-blue-400 bg-blue-400/10 px-[0.8vh] py-[0.2vh] rounded-full border border-blue-400/20 text-[1.5vh]">
+                <Clock className="w-[1.5vh] h-[1.5vh] mr-[0.5vh]" /> COMING SOON
               </span>
             )}
           </div>
